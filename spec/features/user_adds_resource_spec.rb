@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 feature 'user adds a resource' do
+
+  background do
+    @user = create :user
+    login_as @user
+  end
+
   scenario 'successfully' do
     visit new_resource_path
 

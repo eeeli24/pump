@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  root 'resources#index'
+  root 'pages#index'
+  devise_for :users
   resources :resources, only: [:index, :new, :create, :show]
 end

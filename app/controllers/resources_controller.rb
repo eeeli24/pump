@@ -1,6 +1,7 @@
 class ResourcesController < ApplicationController
 
   def index
+    @resources = current_user.resources
   end
 
   def show
@@ -12,7 +13,7 @@ class ResourcesController < ApplicationController
   end
 
   def create
-    @resource = Resource.new(resource_params)
+    @resource = current_user.resources.build(resource_params)
     if @resource.save
       flash[:success] = 'Resource added.'
       redirect_to @resource
