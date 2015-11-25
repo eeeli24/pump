@@ -1,2 +1,7 @@
-= resource.title
-= resource.description
+.row
+  .col-md-12
+    .bs-callout
+      h4
+        = resource.title
+        small.pull-right added on #{added_on(resource.created_at)}
+      p = resource.description

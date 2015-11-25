@@ -1,3 +1,7 @@
-h1 Resources
-= link_to 'Add resource', new_resource_path
+- provide(:title, 'Resources')
+
+.row
+  .col-md-12.controls
+    = link_to 'Add resource', new_resource_path, class: 'btn btn-default'
+    
 = render @resources
