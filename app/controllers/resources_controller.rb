@@ -1,7 +1,7 @@
 class ResourcesController < ApplicationController
 
   def index
-    @resources = current_user.resources
+    @resources = current_user.resources.paginate(page: params[:page])
   end
 
   def show
