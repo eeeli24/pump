@@ -20,10 +20,10 @@
 .bs-callout+.bs-callout {
     margin-top: -5px;
 }
-.bs-callout-default {
+.bs-callout-complete {
     border-left-color: #777;
 }
-.bs-callout-default h4 {
+.bs-callout-complete h4 a{
     color: #777;
 }
 .bs-callout-primary {
@@ -32,10 +32,10 @@
 .bs-callout-primary h4 {
     color: #428bca;
 }
-.bs-callout-success {
+.bs-callout-incomplete {
     border-left-color: #5cb85c;
 }
-.bs-callout-success h4 {
+.bs-callout-incomplete h4 a{
     color: #5cb85c;
 }
 .bs-callout-danger {

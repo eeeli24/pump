@@ -22,9 +22,23 @@ class ResourcesController < ApplicationController
     end
   end
 
+  def mark_complete
+    resource.mark_complete
+    redirect_to :back
+  end
+
+  def mark_incomplete
+    resource.mark_incomplete
+    redirect_to :back
+  end
+
   private
 
   def resource_params
     params.require(:resource).permit(:title, :description)
+  end
+
+  def resource
+    current_user.resources.find(params[:id])
   end
 end

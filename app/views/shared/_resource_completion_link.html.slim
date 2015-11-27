@@ -1,0 +1,4 @@
+- if resource.completed?
+  = link_to 'Mark incomplete', mark_incomplete_resource_path(resource)
+- else
+  = link_to 'Mark complete', mark_complete_resource_path(resource)

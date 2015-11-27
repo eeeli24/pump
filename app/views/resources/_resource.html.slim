@@ -1,7 +1,8 @@
 .row
   .col-md-12
-    .bs-callout
+    .bs-callout class=(resource.completed? ? 'bs-callout-complete' : 'bs-callout-incomplete')
       h4
-        = resource.title
+        = link_to resource.title, resource_path(resource)
         small.pull-right added on #{added_on(resource.created_at)}
       p = resource.description
+      = render partial: 'shared/resource_completion_link', locals: { resource: resource }

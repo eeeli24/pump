@@ -56,4 +56,6 @@ RSpec.configure do |config|
   config.before :suite do
     Warden.test_mode!
   end
+
+  config.include Features, type: :feature
 end
