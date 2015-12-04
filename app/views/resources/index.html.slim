@@ -3,6 +3,9 @@
 .row
   .col-md-12.controls
     = link_to 'Add resource', new_resource_path, class: 'btn btn-default'
+    | Filter by: 
+    = link_to 'Completed', resources_path(status: 'completed')
+    = link_to 'Not completed', resources_path(status: 'incompleted')
     
 = render @resources
 .row

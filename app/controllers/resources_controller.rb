@@ -1,7 +1,7 @@
 class ResourcesController < ApplicationController
 
   def index
-    @resources = current_user.resources.paginate(page: params[:page])
+    @resources = apply_filter(params).paginate(page: params[:page])
   end
 
   def show
@@ -40,5 +40,15 @@ class ResourcesController < ApplicationController
 
   def resource
     current_user.resources.find(params[:id])
+  end
+
+  def apply_filter(params)
+    if params[:status] == 'completed'
+      current_user.resources.completed
+    elsif params[:status] == 'incompleted'
+      current_user.resources.incompleted
+    else
+      current_user.resources
+    end
   end
 end

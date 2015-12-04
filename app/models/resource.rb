@@ -4,6 +4,9 @@ class Resource < ActiveRecord::Base
 
   self.per_page = 10
 
+  scope :completed,   -> { where.not(completed_at: nil) }
+  scope :incompleted, -> { where(completed_at: nil) }
+
   def mark_complete
     touch :completed_at
   end
