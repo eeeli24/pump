@@ -13,7 +13,7 @@ feature 'user sees own resources' do
 
     click_on 'Add resource'
     fill_in 'Title', with: 'A programming tutorial'
-    click_on 'Add'
+    click_on 'Submit'
 
     visit resources_path
     expect(page).to have_content 'A programming tutorial'

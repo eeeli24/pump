@@ -1,4 +1,5 @@
 class ResourcesController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @resources = apply_filter(params).paginate(page: params[:page])
@@ -20,6 +21,25 @@ class ResourcesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @resource = resource
+  end
+
+  def update
+    @resource = resource
+    if @resource.update_attributes(resource_params)
+      flash[:success] = 'Resource updated.'
+      redirect_to @resource
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    resource.destroy
+    redirect_to params[:no_way_back].present? ? resources_url : :back
   end
 
   def mark_complete

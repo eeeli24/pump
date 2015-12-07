@@ -6,3 +6,4 @@
         small.pull-right added on #{added_on(resource.created_at)}
       p = resource.description
       = render partial: 'shared/resource_completion_link', locals: { resource: resource }
+      = link_to 'Delete', resource_path(resource), method: :delete

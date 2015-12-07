@@ -1,5 +1,5 @@
 class Resource < ActiveRecord::Base
-  belongs_to :user, dependent: :destroy
+  belongs_to :user
   validates :title, presence: true
 
   self.per_page = 10
