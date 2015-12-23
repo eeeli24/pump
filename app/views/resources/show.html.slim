@@ -6,3 +6,12 @@
 = render partial: 'shared/resource_completion_link', locals: { resource: @resource }
 = link_to 'Delete', resource_path(@resource, no_way_back: '1'), method: :delete
 = link_to 'Edit', edit_resource_path(@resource)
+
+= form_errors_for @note
+= form_for @note do |f|
+  = f.hidden_field :resource_id, value: @resource.id
+  = f.label :text, 'Add note'
+  = f.text_area :text
+  = f.submit 'Add'
+
+= render @resource.notes

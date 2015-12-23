@@ -7,4 +7,5 @@ Rails.application.routes.draw do
       get :mark_incomplete
     end
   end
+  resources :notes, only: [:create]
 end

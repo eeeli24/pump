@@ -41,4 +41,11 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  # Bullet configuration for tracking n+1 queries.
+  # Will show a js alert in browser and log to log/bullet.log.
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.alert = true
+    Bullet.bullet_logger = true
+  end
 end

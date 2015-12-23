@@ -7,6 +7,7 @@ class ResourcesController < ApplicationController
 
   def show
     @resource = Resource.find(params[:id])
+    @note = Note.new
   end
 
   def new
