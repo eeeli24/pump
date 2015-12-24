@@ -7,4 +7,4 @@
       p = resource.description
       = render partial: 'shared/resource_completion_link', locals: { resource: resource }
       = link_to 'Delete', resource_path(resource), method: :delete
-      | Notes(#{resource.notes.count})
+      | Notes(#{resource.notes.size})
